@@ -1,0 +1,204 @@
+/* ==========================================================================
+   TITAN FORGE™ | Ultra-Performance Gym Stylesheet
+   ========================================================================== */
+
+/* Root Variables */
+:root {
+  --color-brand-volt: #CCFF00;
+  --color-brand-volt-hover: #B3E600;
+  --color-brand-crimson: #FF2A54;
+  --color-brand-dark: #08090B;
+  --color-brand-card: #111317;
+  --color-brand-card-border: #232730;
+  --color-brand-muted: #8E95A5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #232730;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CCFF00;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2A303C;
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #CCFF00;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--color-brand-dark);
+  color: #FFFFFF;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Nav Link Hover Underline Effect */
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-brand-volt);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(17, 19, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Active Muscle / Zone / Day Tabs */
+.zone-tab.active-zone {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+}
+
+.muscle-btn.active-muscle {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+  border-color: var(--color-brand-volt) !important;
+}
+
+.day-btn.active-day {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+}
+
+.calc-tab.active-calc {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+}
+
+.class-filter-btn.active-filter {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+  border-color: var(--color-brand-volt) !important;
+}
+
+.goal-btn.active-goal {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+}
+
+.day-opt-btn.active-day-opt {
+  background-color: var(--color-brand-volt) !important;
+  color: #000000 !important;
+}
+
+/* Before / After Slider Input Range Styling */
+#compareSlider {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  outline: none;
+}
+#compareSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 48px;
+  height: 48px;
+  cursor: ew-resize;
+  opacity: 0;
+}
+#compareSlider::-moz-range-thumb {
+  width: 48px;
+  height: 48px;
+  cursor: ew-resize;
+  opacity: 0;
+}
+
+/* Card Glow on Hover */
+.glow-on-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glow-on-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(204, 255, 0, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(204, 255, 0, 0.15);
+}
+
+/* Toast Animation */
+.toast-slide-in {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.toast-slide-out {
+  animation: slideOutRight 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* FAQ Accordion Smooth Expansion */
+.faq-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Form Input Styling */
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: var(--color-brand-volt) !important;
+  box-shadow: 0 0 0 1px var(--color-brand-volt) !important;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #CCFF00;
+  color: #000000;
+}
